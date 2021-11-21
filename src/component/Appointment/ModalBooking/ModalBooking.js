@@ -46,7 +46,7 @@ const ModalBooking = ({openbooking,handleBookingClose, booking, date,setBookingS
           date: date.toLocaleDateString()
         }
         //send server
-        fetch('http://localhost:5000/appointments', {
+        fetch('https://floating-scrubland-06607.herokuapp.com/appointments', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

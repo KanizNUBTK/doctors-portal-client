@@ -16,7 +16,7 @@ const Apointments = ({date}) => {
     const [apointments, setApointments] = useState([]);
 
     useEffect(()=>{
-        const url=`http://localhost:5000/appointments?email=${user.email}&date=${date}`;
+        const url=`https://floating-scrubland-06607.herokuapp.com/appointments?email=${user.email}&date=${date}`;
         fetch(url,{
             headers: {
                 'authorization':`Bearer ${token}`,
@@ -49,10 +49,11 @@ const Apointments = ({date}) => {
                         </TableCell>
                         <TableCell align="right">{row.time}</TableCell>
                         <TableCell align="right">{row.serviceName}</TableCell>
-                        <TableCell align="right">{row.payment ? 
-                            'Paid' :
-                            <Link to={`/dashboard/payment/${row._id}`}><button>pay</button></Link>
-                        }</TableCell>
+                        <TableCell align="right">
+                            {row.payment ?  'Paid' :
+                            <Link to={`/dashboard/payment/${row._id}`}><button>Pay</button></Link>
+                            }
+                        </TableCell>
                         </TableRow>
                     ))}
                     </TableBody>

@@ -31,6 +31,7 @@ const Navbar = () => {
                 </Typography>
                 <Link to="/home" style={{ textDecoration: 'none', color: 'white' }}><Button color="inherit">Home</Button></Link>
                 <Link to="/appointment" style={{ textDecoration: 'none', color: 'white' }}><Button color="inherit">Appointment</Button></Link>
+                {user.email && <span style={{ padding:'10px', color: 'white' }}>{user.displayName} </span>}
                 {
                     user?.email?
                         <Box>
